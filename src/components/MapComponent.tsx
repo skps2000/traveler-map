@@ -580,7 +580,7 @@ export default function MapComponent({ selectedTravelerId, onSelectTraveler }: M
                     {index + 1}
                   </div>
                   <div style={{ fontWeight: 600, color: 'white', fontSize: '11px' }}>
-                    Waypoint {index + 1}
+                    {location.location_name || `Waypoint ${index + 1}`}
                   </div>
                 </div>
                 <div style={{ 
