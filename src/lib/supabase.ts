@@ -16,6 +16,7 @@ export interface Location {
   altitude?: number
   speed?: number
   created_at: string
+  location_name?: string
 }
 
 export interface Marker {

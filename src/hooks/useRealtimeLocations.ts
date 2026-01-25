@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import { supabase, Location } from '@/lib/supabase'
-import { RealtimeChannel } from '@supabase/supabase-js'
+import type { RealtimeChannel } from '@supabase/supabase-js'
 
 export function useRealtimeLocations(tripId: string) {
   const [locations, setLocations] = useState<Location[]>([])
@@ -45,7 +45,7 @@ export function useRealtimeLocations(tripId: string) {
             table: 'locations',
             filter: `trip_id=eq.${tripId}`
           },
-          (payload) => {
+          (payload: any) => {
             console.log('New location received:', payload.new)
             setLocations((prev) => [...prev, payload.new as Location])
           }
