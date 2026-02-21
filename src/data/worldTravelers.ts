@@ -12,9 +12,121 @@ export const travelers: Traveler[] = [
   { id: 'traveler-1', name: '김한량-동남아', color: '#00d4ff', avatar: '🌴', description: '동남아시아 배낭여행' },
   { id: 'traveler-2', name: '김한량-아프리카', color: '#ff6b35', avatar: '🦁', description: '아프리카 종단 여행' },
   { id: 'traveler-3', name: '김한량-실크로드', color: '#4ecdc4', avatar: '🚴‍♂️', description: '실크로드 자전거 횡단' },
+  { id: 'traveler-4', name: 'the runaway dork', color: '#8e44ad', avatar: '🧑‍🎤', description: 'skps2000의 실크로드 여행' },
 ]
 
 // 김한량-동남아 (태국 → 미얀마 → 필리핀)
+// the runaway dork (우즈베키스탄-타슈겐트 → 아제르바이잔-바쿠 → 아제르바이잔-조지아국경(기르미즈쾨르피) → 조지아 루스타비 → 조지아 트빌리시 → 조지아 바투미 → 터키 이스탄불 → 조지아 트빌리시 → 조지아 카즈베기 → 조지아 고다우리 → 조지아 트빌리시 → 조지아 바투미)
+const traveler4Locations: Location[] = [
+  {
+    id: '4-1',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [69.2401, 41.2995] },
+    altitude: 450,
+    speed: 0,
+    created_at: '2026-01-01T09:00:00Z',
+    location_name: '우즈베키스탄 타슈겐트'
+  },
+  {
+    id: '4-2',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [49.8671, 40.4093] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-05T10:00:00Z',
+    location_name: '아제르바이잔 바쿠'
+  },
+  {
+    id: '4-3',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [45.0167, 41.2000] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-07T12:00:00Z',
+    location_name: '아제르바이잔-조지아국경(기르미즈쾨르피)'
+  },
+  {
+    id: '4-4',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [44.9900, 41.5350] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-08T15:00:00Z',
+    location_name: '조지아 루스타비'
+  },
+  {
+    id: '4-5',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [44.7994, 41.7151] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-10T10:00:00Z',
+    location_name: '조지아 트빌리시'
+  },
+  {
+    id: '4-6',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [41.6380, 41.6423] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-15T11:00:00Z',
+    location_name: '조지아 바투미'
+  },
+  {
+    id: '4-7',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [28.9784, 41.0082] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-20T13:00:00Z',
+    location_name: '터키 이스탄불'
+  },
+  {
+    id: '4-8',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [44.7994, 41.7151] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-25T10:00:00Z',
+    location_name: '조지아 트빌리시 (재입국)'
+  },
+  {
+    id: '4-9',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [44.6042, 42.6614] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-28T09:00:00Z',
+    location_name: '조지아 카즈베기'
+  },
+  {
+    id: '4-10',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [44.4778, 42.4714] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-01-29T09:00:00Z',
+    location_name: '조지아 고다우리'
+  },
+  {
+    id: '4-11',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [44.7994, 41.7151] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-02-01T10:00:00Z',
+    location_name: '조지아 트빌리시 (3번째)'
+  },
+  {
+    id: '4-12',
+    trip_id: 'traveler-4',
+    geom: { type: 'Point', coordinates: [41.6380, 41.6423] },
+    altitude: 0,
+    speed: 0,
+    created_at: '2026-02-05T11:00:00Z',
+    location_name: '조지아 바투미 (2번째)'
+  }
+];
 const traveler1Locations: Location[] = [
   {
     id: '1-1',
@@ -426,6 +538,7 @@ export const allTravelerLocations = new Map<string, Location[]>([
   ['traveler-1', traveler1Locations],
   ['traveler-2', traveler2Locations],
   ['traveler-3', traveler3Locations],
+  ['traveler-4', traveler4Locations],
 ])
 
 // Haversine formula로 두 지점 간 거리 계산 (km)
